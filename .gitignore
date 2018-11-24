@@ -1,0 +1,5 @@
+.DS_Store
+.firebase/*
+public/additiveflow/*
+firebase.json
+.firebaserc

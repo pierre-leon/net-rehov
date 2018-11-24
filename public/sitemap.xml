@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://www.rehov.net/</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/hyperlocal.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+
+   <video:video>
+       <video:title>HyperLocal - Mobile and web application</video:title>
+       <video:thumbnail_loc>https://www.rehov.net/assets/images/thumbnails/IMG_3959.jpg</video:thumbnail_loc> 
+       <video:description>Urban neighbourhoods are the building blocks of the city, but they are complex to define and incorporate; how do we know where one neighbourhood starts and another begins?</video:description>
+       <video:duration>155</video:duration>
+       <video:publication_date>2017-09-27T19:20:30+08:00</video:publication_date>
+       <video:family_friendly>yes</video:family_friendly>
+       <video:live>no</video:live>
+     </video:video>
+
+</url>
+<url>
+  <loc>https://www.rehov.net/pollination.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/residential.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/dip.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/cbt.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/morpho.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/hadar.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/robot.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/netanya.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/tlvpark.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/arduino.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.rehov.net/index.html</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hyperlocal.rehov.net/</loc>
+  <lastmod>2018-02-06T23:40:10+00:00</lastmod>
+  <priority>0.5</priority>
+</url>
+
+</urlset>
