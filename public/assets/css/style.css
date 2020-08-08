@@ -390,8 +390,8 @@ Button
 }
 .btn-default:hover{
     color: #fff;
-    background-color: #fddc57;
-    border-color: #fddc57;
+    border-color: #eee;
+    color:#00a885;
 }
 
 
@@ -679,19 +679,6 @@ textarea::-ms-input-placeholder{
     color: #5a5a5a;
     padding: 5px;
 }
-
-/*for image bg*/
-/*.img-bg{
-  background: url(../images/home-msg.jpg) no-repeat center top fixed;
-  background-size
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  overflow: hidden;
-}*/
-
 
 .transform_scal_rotate:hover img{
     -webkit-transform: scale(1.1) rotate(4deg);
