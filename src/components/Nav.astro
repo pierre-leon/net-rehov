@@ -1,0 +1,105 @@
+---
+import { SHOW_THOUGHTS } from "../config";
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Work" },
+  ...(SHOW_THOUGHTS ? [{ href: "/thoughts", label: "Thoughts" }] : []),
+  { href: "/#contact", label: "Contact" },
+];
+
+const { transparent = false } = Astro.props;
+---
+
+<header
+  id="site-nav"
+  class:list={[
+    "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+    transparent ? "nav-transparent" : "bg-white shadow-sm",
+  ]}
+>
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-semibold text-lg tracking-tight nav-logo">
+      Ishay Rosenthal
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="text-sm font-medium nav-link transition-colors duration-150 hover:text-teal"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 nav-link"
+      aria-label="Open menu"
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+        <rect y="3" width="20" height="2" rx="1" />
+        <rect y="9" width="20" height="2" rx="1" />
+        <rect y="15" width="20" height="2" rx="1" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      {
+        links.map((l) => (
+          <a href={l.href} class="text-sm font-medium text-gray-700 hover:text-teal">
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</header>
+
+<style is:global>
+  :not(.nav-transparent) .nav-logo,
+  :not(.nav-transparent) .nav-link {
+    color: #111827;
+  }
+  :not(.nav-transparent) .nav-logo:hover,
+  :not(.nav-transparent) .nav-link:hover {
+    color: #92c0c0;
+  }
+  .nav-transparent .nav-logo,
+  .nav-transparent .nav-link {
+    color: white;
+  }
+  .nav-transparent .nav-logo:hover,
+  .nav-transparent .nav-link:hover {
+    color: #92c0c0;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("site-nav");
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const isTransparent = nav?.classList.contains("nav-transparent");
+
+  function updateNav() {
+    if (!nav || !isTransparent) return;
+    if (window.scrollY > 20) {
+      nav.classList.remove("nav-transparent");
+      nav.classList.add("bg-white", "shadow-sm");
+    } else {
+      nav.classList.add("nav-transparent");
+      nav.classList.remove("bg-white", "shadow-sm");
+    }
+  }
+
+  if (isTransparent) {
+    window.addEventListener("scroll", updateNav, { passive: true });
+  }
+
+  mobileBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+</script>

@@ -1,0 +1,38 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      { "source": "/index.html",       "destination": "/",                        "type": 301 },
+      { "source": "/code.html",        "destination": "/projects#experiments",    "type": 301 },
+      { "source": "/urban.html",       "destination": "/projects#architecture",   "type": 301 },
+      { "source": "/hyperlocal.html",  "destination": "/projects/hyperlocal",     "type": 301 },
+      { "source": "/dip.html",         "destination": "/projects/dip",            "type": 301 },
+      { "source": "/morpho.html",      "destination": "/projects/morphogenesis",  "type": 301 },
+      { "source": "/pollination.html", "destination": "/projects/pollination",    "type": 301 },
+      { "source": "/robot.html",       "destination": "/projects/robotic-fab",    "type": 301 },
+      { "source": "/arduino.html",     "destination": "/projects/kinetic",        "type": 301 },
+      { "source": "/cbt.html",         "destination": "/projects/cbt",            "type": 301 },
+      { "source": "/hadar.html",       "destination": "/projects/hadar",          "type": 301 },
+      { "source": "/netanya.html",     "destination": "/projects/netanya",        "type": 301 },
+      { "source": "/tlvpark.html",     "destination": "/projects/tlvpark",        "type": 301 },
+      { "source": "/residential.html", "destination": "/projects/alon",           "type": 301 }
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|css|woff2|woff|ttf)",
+        "headers": [{ "key": "Cache-Control", "value": "max-age=31536000, immutable" }]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|svg)",
+        "headers": [{ "key": "Cache-Control", "value": "max-age=86400" }]
+      }
+    ]
+  }
+}

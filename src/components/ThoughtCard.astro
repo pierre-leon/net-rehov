@@ -1,0 +1,55 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  date: Date;
+  excerpt: string;
+  heroImage?: string;
+  tags?: string[];
+}
+
+const { slug, title, date, excerpt, heroImage, tags } = Astro.props;
+
+const formatted = date.toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+---
+
+<a
+  href={`/thoughts/${slug}`}
+  class="group flex flex-col md:flex-row gap-6 py-8 border-b border-gray-100 last:border-0"
+>
+  {
+    heroImage && (
+      <div class="md:w-48 md:shrink-0 aspect-[3/2] md:aspect-auto overflow-hidden rounded-md bg-gray-100">
+        <img
+          src={heroImage}
+          alt={title}
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
+  <div class="flex-1 min-w-0">
+    <div class="flex items-center gap-3 mb-2">
+      <time class="text-xs text-gray-400 font-medium">{formatted}</time>
+      {
+        tags?.map((tag) => (
+          <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-teal/10 text-teal-dark">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+    <h3 class="font-semibold text-gray-900 group-hover:text-teal transition-colors leading-snug">
+      {title}
+    </h3>
+    <p class="text-sm text-gray-500 mt-2 leading-relaxed line-clamp-2">{excerpt}</p>
+    <span class="inline-flex items-center gap-1 text-sm font-medium text-teal mt-3">
+      Read more <i class="fa-solid fa-arrow-right text-xs"></i>
+    </span>
+  </div>
+</a>

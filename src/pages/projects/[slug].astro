@@ -1,0 +1,206 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Gallery from "../../components/Gallery.astro";
+import YouTube from "../../components/YouTube.astro";
+import Figure from "../../components/Figure.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const d = project.data;
+
+const metaItems = [
+  d.role && { icon: "fa-solid fa-user-tie", label: "Role", value: d.role },
+  d.year && { icon: "fa-solid fa-calendar", label: "Year", value: d.year },
+  d.location && { icon: "fa-solid fa-location-dot", label: "Location", value: d.location },
+  d.collaboration && { icon: "fa-solid fa-people-group", label: "With", value: d.collaboration },
+].filter(Boolean) as { icon: string; label: string; value: string }[];
+---
+
+<BaseLayout title={d.title} description={d.description} transparentNav={true} ogImage={d.heroImage}>
+  <!-- Hero -->
+  <section class="relative h-[60vh] md:h-[70vh] flex items-end overflow-hidden bg-gray-900">
+    <img
+      src={d.heroImage}
+      alt={d.title}
+      class="absolute inset-0 w-full h-full object-cover opacity-60"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent">
+    </div>
+    <div class="relative z-10 px-6 pb-12 max-w-6xl mx-auto w-full">
+      {
+        d.tags && (
+          <div class="flex flex-wrap gap-2 mb-4">
+            {d.tags.map((tag) => (
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-white/20 text-white backdrop-blur-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+      <h1 class="text-4xl md:text-6xl font-bold text-white">{d.title}</h1>
+      {d.role && <p class="text-white/70 mt-2 text-lg">{d.role}</p>}
+    </div>
+  </section>
+
+  <!-- Body: two columns -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-[1fr_320px] gap-12 items-start">
+      <!-- Left: gallery + content -->
+      <div>
+        {
+          d.gallery && d.gallery.length > 0 ? (
+            <Gallery images={d.gallery} title={d.title} />
+          ) : (
+            <div class="aspect-[16/9] rounded-lg overflow-hidden bg-gray-100">
+              <img
+                src={d.heroImage}
+                alt={d.title}
+                class="w-full h-full object-cover"
+              />
+            </div>
+          )
+        }
+
+        {
+          d.videos && d.videos.length > 0 && (
+            <div class="mt-10 space-y-6">
+              {d.videos.map((id) => (
+                <div class="relative w-full" style="aspect-ratio: 16/9;">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${id}?rel=0`}
+                    title="Project video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    class="absolute inset-0 w-full h-full rounded-lg"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          /* Markdown body */
+        }
+        <div class="prose prose-gray max-w-none mt-12">
+          <Content components={{ YouTube, Figure }} />
+        </div>
+      </div>
+
+      <!-- Right: details sidebar -->
+      <aside class="lg:sticky lg:top-24">
+        <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+          <h2 class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">
+            Project Details
+          </h2>
+
+          {
+            d.description && (
+              <p class="text-gray-700 text-sm leading-relaxed mb-6">{d.description}</p>
+            )
+          }
+
+          {
+            metaItems.length > 0 && (
+              <dl class="space-y-4">
+                {metaItems.map((item) => (
+                  <div class="flex items-start gap-3">
+                    <i class={`${item.icon} text-teal mt-0.5 w-4 shrink-0`} />
+                    <div>
+                      <dt class="text-xs text-gray-400 font-medium uppercase tracking-wide">
+                        {item.label}
+                      </dt>
+                      <dd class="text-sm text-gray-700 mt-0.5">{item.value}</dd>
+                    </div>
+                  </div>
+                ))}
+              </dl>
+            )
+          }
+
+          {
+            d.tags && d.tags.length > 0 && (
+              <div class="mt-6 pt-6 border-t border-gray-200">
+                <p class="text-xs text-gray-400 font-medium uppercase tracking-wide mb-3">Tags</p>
+                <div class="flex flex-wrap gap-2">
+                  {d.tags.map((tag) => (
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-teal/10 text-teal-dark">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+
+          {
+            d.website && (
+              <div class="mt-6 pt-6 border-t border-gray-200">
+                <a
+                  href={d.website}
+                  target="_blank"
+                  rel="noopener"
+                  class="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-teal text-white text-sm font-semibold rounded hover:bg-teal-dark transition-colors"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs" /> View Website
+                </a>
+              </div>
+            )
+          }
+        </div>
+
+        <a
+          href="/projects"
+          class="mt-4 flex items-center gap-2 text-sm text-gray-500 hover:text-teal transition-colors"
+        >
+          <i class="fa-solid fa-arrow-left text-xs"></i> All projects
+        </a>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  .prose h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .prose p {
+    color: #4b5563;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .prose a {
+    color: #92c0c0;
+    text-decoration: underline;
+  }
+  .prose ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #4b5563;
+  }
+  .prose ul li {
+    margin-bottom: 0.25rem;
+  }
+</style>

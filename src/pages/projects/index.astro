@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+
+const all = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const ventures    = all.filter((p) => p.data.category === "ventures");
+const experiments = all.filter((p) => p.data.category === "experiments");
+const architecture = all.filter((p) => p.data.category === "architecture");
+---
+
+<BaseLayout title="Work" description="Products, ventures, experiments and earlier work by Ishay Rosenthal.">
+  <div class="pt-32 pb-16 px-6 max-w-6xl mx-auto">
+    <p class="text-sm font-semibold text-teal uppercase tracking-widest mb-2">Current & Past Ventures</p>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Work</h1>
+    <p class="text-gray-500 max-w-xl">
+      Products and ventures I've built or led — from early prototypes to scaled platforms.
+    </p>
+  </div>
+
+  <!-- Ventures -->
+  <section class="px-6 pb-24 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        ventures.map((p) => (
+          <ProjectCard
+            slug={p.id}
+            title={p.data.title}
+            description={p.data.description}
+            role={p.data.role}
+            heroImage={p.data.heroImage}
+            tags={p.data.tags}
+            icon={p.data.icon}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Experiments -->
+  <section id="experiments" class="border-t border-gray-100 px-6 pb-12 max-w-6xl mx-auto">
+    <div class="py-12">
+      <button
+        id="toggle-experiments"
+        class="group flex items-center gap-3 text-gray-500 hover:text-gray-900 transition-colors"
+        aria-expanded="false"
+        aria-controls="panel-experiments"
+      >
+        <span class="text-sm font-semibold uppercase tracking-widest">Experiments</span>
+        <span class="text-xs text-gray-400 font-normal normal-case tracking-normal">Prototypes & side projects</span>
+        <i class="toggle-icon fa-solid fa-chevron-down text-xs ml-1 transition-transform duration-300"></i>
+      </button>
+      <p class="text-sm text-gray-400 mt-2 max-w-xl">
+        Prototypes and research projects from academic work and personal curiosity — computational design, physical computing, ML, and urban tech.
+      </p>
+    </div>
+    <div id="panel-experiments" class="hidden">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
+        {
+          experiments.map((p) => (
+            <ProjectCard
+              slug={p.id}
+              title={p.data.title}
+              description={p.data.description}
+              role={p.data.role}
+              heroImage={p.data.heroImage}
+              tags={p.data.tags}
+              icon={p.data.icon}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture & Urban Design -->
+  <section id="architecture" class="border-t border-gray-100 px-6 pb-24 max-w-6xl mx-auto">
+    <div class="py-12">
+      <button
+        id="toggle-architecture"
+        class="group flex items-center gap-3 text-gray-500 hover:text-gray-900 transition-colors"
+        aria-expanded="false"
+        aria-controls="panel-architecture"
+      >
+        <span class="text-sm font-semibold uppercase tracking-widest">Architecture & Urban Design</span>
+        <i class="toggle-icon fa-solid fa-chevron-down text-xs ml-1 transition-transform duration-300"></i>
+      </button>
+      <p class="text-sm text-gray-400 mt-2 max-w-xl">
+        Projects from a previous career in architecture and urban design.
+      </p>
+    </div>
+    <div id="panel-architecture" class="hidden">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
+        {
+          architecture.map((p) => (
+            <ProjectCard
+              slug={p.id}
+              title={p.data.title}
+              description={p.data.description}
+              role={p.data.role}
+              heroImage={p.data.heroImage}
+              tags={p.data.tags}
+              icon={p.data.icon}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function setupToggle(btnId: string, panelId: string) {
+    const btn = document.getElementById(btnId)!;
+    const panel = document.getElementById(panelId)!;
+    const icon = btn.querySelector<HTMLElement>(".toggle-icon")!;
+
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      panel.classList.toggle("hidden");
+      icon.style.transform = open ? "" : "rotate(180deg)";
+    });
+
+    return { btn, panel, icon };
+  }
+
+  const { btn: expBtn, panel: expPanel, icon: expIcon } = setupToggle("toggle-experiments", "panel-experiments");
+  const { btn: archBtn, panel: archPanel, icon: archIcon } = setupToggle("toggle-architecture", "panel-architecture");
+
+  // Auto-expand and scroll if URL has a matching hash
+  function openSection(btn: HTMLElement, panel: HTMLElement, icon: HTMLElement) {
+    btn.setAttribute("aria-expanded", "true");
+    panel.classList.remove("hidden");
+    icon.style.transform = "rotate(180deg)";
+  }
+
+  const hash = window.location.hash;
+  if (hash === "#experiments") {
+    openSection(expBtn, expPanel, expIcon);
+    document.getElementById("experiments")?.scrollIntoView({ behavior: "smooth" });
+  } else if (hash === "#architecture") {
+    openSection(archBtn, archPanel, archIcon);
+    document.getElementById("architecture")?.scrollIntoView({ behavior: "smooth" });
+  }
+</script>

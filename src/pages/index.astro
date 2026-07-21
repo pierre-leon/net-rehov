@@ -1,0 +1,322 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ThoughtCard from "../components/ThoughtCard.astro";
+import { getCollection } from "astro:content";
+import { SHOW_THOUGHTS } from "../config";
+
+const allProjects = await getCollection("projects");
+const featured = allProjects
+  .filter((p) => p.data.featured && p.data.category === "ventures")
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const recentThoughts = (await getCollection("thoughts"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title="Home"
+  description="Ishay Rosenthal — Product Leader working at the intersection of AI, data, and design."
+  transparentNav={true}
+>
+  <!-- Hero -->
+  <section class="relative min-h-[70vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0 bg-gray-800">
+      <img
+        src="/images/hero-image.png"
+        alt=""
+        class="w-full h-full object-cover opacity-80"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60"></div>
+    </div>
+    <div class="relative z-10 w-full px-6 pb-20 max-w-3xl mx-auto text-center">
+      <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight">
+        Ishay Rosenthal
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-white/80 font-light tracking-wide">
+        Product Leadership &nbsp;·&nbsp; AI/ML &nbsp;·&nbsp; 0→1
+      </p>
+      <p class="mt-6 text-base md:text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
+        Building products at the intersection of AI, data, and design.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-4">
+        <a
+          href="/projects"
+          class="px-6 py-3 bg-teal text-white font-semibold rounded hover:bg-teal-dark transition-colors duration-150"
+        >
+          View Work
+        </a>
+        <a
+          href="/#contact"
+          class="px-6 py-3 border border-white/50 text-white font-semibold rounded hover:border-white hover:bg-white/10 transition-colors duration-150"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+    <a
+      href="#projects"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white transition-colors animate-bounce"
+      aria-label="Scroll down"
+    >
+      <i class="fa-solid fa-chevron-down text-xl"></i>
+    </a>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <p class="text-sm font-semibold text-teal uppercase tracking-widest mb-2">Selected Work</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Work</h2>
+      </div>
+      <a
+        href="/projects"
+        class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-teal transition-colors"
+      >
+        All work <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        featured.map((project) => (
+          <ProjectCard
+            slug={project.id}
+            title={project.data.title}
+            description={project.data.description}
+            role={project.data.role}
+            heroImage={project.data.heroImage}
+            tags={project.data.tags}
+            icon={project.data.icon}
+          />
+        ))
+      }
+    </div>
+    <div class="mt-10 text-center md:hidden">
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 px-6 py-3 border border-gray-200 rounded text-sm font-medium text-gray-700 hover:border-teal hover:text-teal transition-colors"
+      >
+        All projects <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-sm font-semibold text-teal uppercase tracking-widest mb-2">About</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Multidisciplinary Product Leader
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          I work at the intersection of AI, data, and design — building 0→1 products that are both
+          technically rigorous and deeply human.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          My background spans Architecture, Computational Design, and Mechanics, which shapes how I
+          think about systems, constraints, and craft.
+        </p>
+        <a
+          href="/projects"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-teal-dark transition-colors"
+        >
+          See my work <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        {
+          [
+            { icon: "fa-solid fa-brain", label: "AI/ML Products" },
+            { icon: "fa-solid fa-layer-group", label: "0→1 Building" },
+            { icon: "fa-solid fa-lightbulb", label: "Design Thinking" },
+            { icon: "fa-solid fa-chart-line", label: "Growth & Scale" },
+          ].map((item) => (
+            <div class="bg-white rounded-lg p-5 border border-gray-100">
+              <i class={`${item.icon} text-teal text-xl mb-3 block`} />
+              <p class="text-sm font-medium text-gray-700">{item.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Thoughts preview -->
+  {
+    SHOW_THOUGHTS && recentThoughts.length > 0 && (
+      <section class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="flex items-end justify-between mb-12">
+          <div>
+            <p class="text-sm font-semibold text-teal uppercase tracking-widest mb-2">Writing</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Thoughts</h2>
+          </div>
+          <a
+            href="/thoughts"
+            class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-teal transition-colors"
+          >
+            All posts <i class="fa-solid fa-arrow-right text-xs" />
+          </a>
+        </div>
+        <div>
+          {recentThoughts.map((post) => (
+            <ThoughtCard
+              slug={post.id}
+              title={post.data.title}
+              date={post.data.date}
+              excerpt={post.data.excerpt}
+              heroImage={post.data.heroImage}
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+        <div class="mt-8 text-center md:hidden">
+          <a
+            href="/thoughts"
+            class="inline-flex items-center gap-2 px-6 py-3 border border-gray-200 rounded text-sm font-medium text-gray-700 hover:border-teal hover:text-teal transition-colors"
+          >
+            All posts <i class="fa-solid fa-arrow-right text-xs" />
+          </a>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 bg-gray-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+      <!-- Left: copy + social -->
+      <div>
+        <p class="text-sm font-semibold text-teal uppercase tracking-widest mb-2">Get in Touch</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's talk</h2>
+        <p class="text-gray-400 leading-relaxed mb-8">
+          Whether you're building something ambitious, want to collaborate, or just want to
+          connect — I'd love to hear from you.
+        </p>
+        <div class="space-y-3 mb-10">
+          <p class="text-white font-semibold">Ishay Rosenthal</p>
+          <p class="text-gray-400 text-sm">London</p>
+        </div>
+        <div class="flex items-center gap-6">
+          <a
+            href="https://www.linkedin.com/in/ishay/"
+            target="_blank"
+            rel="noopener"
+            class="text-gray-400 hover:text-teal transition-colors"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin text-2xl"></i>
+          </a>
+          <a
+            href="https://twitter.com/pierre_leon"
+            target="_blank"
+            rel="noopener"
+            class="text-gray-400 hover:text-teal transition-colors"
+            aria-label="Twitter / X"
+          >
+            <i class="fa-brands fa-x-twitter text-2xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: contact form -->
+      <div>
+        <form
+          id="contact-form"
+          action="https://api.form-data.com/f/qosegd4yrqm7uhdq158ems"
+          method="POST"
+          class="space-y-4"
+        >
+          <div id="form-fields" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-teal transition-colors text-sm"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-teal transition-colors text-sm"
+                placeholder="your@email.com"
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded text-white placeholder-gray-500 focus:outline-none focus:border-teal transition-colors text-sm resize-none"
+                placeholder="What's on your mind?"></textarea>
+            </div>
+            <input type="hidden" name="_fd" value="0" />
+            <button
+              type="submit"
+              id="form-submit"
+              class="w-full px-6 py-3 bg-teal text-white font-semibold rounded hover:bg-teal-dark transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Send message
+            </button>
+          </div>
+          <div id="form-thankyou" class="hidden py-8 text-center">
+            <p class="text-lg font-semibold text-white mb-2">Thanks for connecting!</p>
+            <p class="text-gray-400">I'll get back to you soon.</p>
+          </div>
+          <p id="form-error" class="text-sm text-center text-red-400 hidden">Something went wrong — please try again.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fields = document.getElementById("form-fields")!;
+      const thankyou = document.getElementById("form-thankyou")!;
+      const error = document.getElementById("form-error")!;
+      const btn = document.getElementById("form-submit") as HTMLButtonElement;
+
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      error.classList.add("hidden");
+
+      const formData = new FormData(form);
+      const body: Record<string, string> = {};
+      formData.forEach((val, key) => { if (key !== "_fd") body[key] = val as string; });
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        });
+        if (!res.ok) throw new Error(`${res.status}`);
+        const data = await res.json();
+        if (!data.success) throw new Error("not successful");
+        fields.classList.add("hidden");
+        thankyou.classList.remove("hidden");
+      } catch {
+        error.classList.remove("hidden");
+        btn.disabled = false;
+        btn.textContent = "Send message";
+      }
+    });
+  }
+</script>
