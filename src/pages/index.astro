@@ -20,6 +20,7 @@ const recentThoughts = (await getCollection("thoughts"))
   title="Home"
   description="Ishay Rosenthal — Product Leader working at the intersection of AI, data, and design."
   transparentNav={true}
+  preloadImage="/images/hero-image.png"
 >
   <!-- Hero -->
   <section class="relative min-h-[70vh] flex items-end overflow-hidden">
@@ -28,6 +29,8 @@ const recentThoughts = (await getCollection("thoughts"))
         src="/images/hero-image.png"
         alt=""
         class="w-full h-full object-cover opacity-80"
+        fetchpriority="high"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60"></div>
     </div>

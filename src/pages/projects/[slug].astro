@@ -25,13 +25,15 @@ const metaItems = [
 ].filter(Boolean) as { icon: string; label: string; value: string }[];
 ---
 
-<BaseLayout title={d.title} description={d.description} transparentNav={true} ogImage={d.heroImage}>
+<BaseLayout title={d.title} description={d.description} transparentNav={true} ogImage={d.heroImage} preloadImage={d.heroImage}>
   <!-- Hero -->
   <section class="relative h-[60vh] md:h-[70vh] flex items-end overflow-hidden bg-gray-900">
     <img
       src={d.heroImage}
       alt={d.title}
       class="absolute inset-0 w-full h-full object-cover opacity-60"
+      fetchpriority="high"
+      loading="eager"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent">
     </div>
