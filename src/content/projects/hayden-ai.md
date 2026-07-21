@@ -6,6 +6,7 @@ year: "2025 - Ongoing"
 location: London, UK
 website: https://hayden.ai
 heroImage: /images/projects/hayden-ai/detection.png
+ogImage: /images/projects/hayden-ai/bus-sensors.png
 gallery:
   - /images/projects/hayden-ai/detection.png
   - /images/projects/hayden-ai/city.png

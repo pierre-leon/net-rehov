@@ -5,6 +5,7 @@ role: MSc Thesis — Bartlett, UCL
 year: "2017"
 location: London, UK
 heroImage: /images/projects/pollination/pollination.png
+ogImage: /images/projects/pollination/delivered.png
 gallery:
   - /images/projects/pollination/pollination.png
   - /images/projects/pollination/delivered.png

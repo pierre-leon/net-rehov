@@ -25,7 +25,7 @@ const metaItems = [
 ].filter(Boolean) as { icon: string; label: string; value: string }[];
 ---
 
-<BaseLayout title={d.title} description={d.description} transparentNav={true} ogImage={d.heroImage} preloadImage={d.heroImage}>
+<BaseLayout title={d.title} description={d.description} transparentNav={true} ogImage={d.ogImage ?? d.heroImage} preloadImage={d.heroImage}>
   <!-- Hero -->
   <section class="relative h-[60vh] md:h-[70vh] flex items-end overflow-hidden bg-gray-900">
     <img

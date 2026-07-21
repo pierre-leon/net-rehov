@@ -6,6 +6,7 @@ year: "2017"
 location: London, UK
 collaboration: Parul Jain, Fatemeh Firouzabadi, Sherif Tarabishy
 heroImage: /images/projects/robotic-fab/robot.gif
+ogImage: /images/projects/robotic-fab/IMG_2946c.jpg
 gallery:
   - /images/projects/robotic-fab/robot.gif
   - /images/projects/robotic-fab/IMG_2946c.jpg

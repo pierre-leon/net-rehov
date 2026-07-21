@@ -12,6 +12,7 @@ const projects = defineCollection({
     collaboration: z.string().optional(),
     website: z.string().url().optional(),
     heroImage: z.string(),
+    ogImage: z.string().optional(),
     gallery: z.array(z.string()).optional(),
     videos: z.array(z.string()).optional(),
     featured: z.boolean().default(false),
