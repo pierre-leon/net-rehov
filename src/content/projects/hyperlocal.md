@@ -1,6 +1,6 @@
 ---
 title: Hyperlocal
-description: A user-generated city app — collecting location data to visualise and provide insight into your personal urban interaction patterns.
+description: A user-generated city app - collecting location data to visualise and provide insight into your personal urban interaction patterns.
 role: Designer & Developer
 year: "2017"
 location: London, UK
@@ -24,17 +24,17 @@ tags:
   - Prototype
 ---
 
-Urban neighbourhoods are the building blocks of the city — but they are complex to define and incorporate. How do we know where one neighbourhood starts and another begins?
+Urban neighbourhoods are the building blocks of the city - but they are complex to define and incorporate. How do we know where one neighbourhood starts and another begins?
 
-Hyperlocal proposes a concept of personalised urban areas tied to individual experience: home, workplace, social connections, and frequented locations. Together these create a *user-generated city* — a map of the city as you actually live it, not as planners drew it.
+Hyperlocal proposes a concept of personalised urban areas tied to individual experience: home, workplace, social connections, and frequented locations. Together these create a *user-generated city* - a map of the city as you actually live it, not as planners drew it.
 
 ## How it Works
 
 The platform collects location data to visualise and provide insight into personal urban interaction patterns. Two operational modes:
 
-**Individual mode** — your personal city footprint, visualised over time. Understand how your relationship with your neighbourhood evolves.
+**Individual mode** - your personal city footprint, visualised over time. Understand how your relationship with your neighbourhood evolves.
 
-**Research mode** — aggregate and anonymised data for urban researchers and planners, offering a participatory layer of lived-experience data alongside traditional datasets.
+**Research mode** - aggregate and anonymised data for urban researchers and planners, offering a participatory layer of lived-experience data alongside traditional datasets.
 
 ## Platform
 

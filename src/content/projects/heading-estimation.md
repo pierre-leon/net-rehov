@@ -18,7 +18,7 @@ tags:
   - Sensors
 ---
 
-A machine learning approach to pedestrian heading estimation — inferring the direction a person is walking from sensor data, without requiring GPS line-of-sight or explicit user input.
+A machine learning approach to pedestrian heading estimation - inferring the direction a person is walking from sensor data, without requiring GPS line-of-sight or explicit user input.
 
 ## Problem
 

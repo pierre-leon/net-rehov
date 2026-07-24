@@ -1,7 +1,7 @@
 ---
 title: Pollination Networks
 description: A Delay Tolerant routing algorithm drawing inspiration from Adaptive Foraging strategies in biological pollination networks.
-role: MSc Thesis — Bartlett, UCL
+role: MSc Thesis - Bartlett, UCL
 year: "2017"
 location: London, UK
 heroImage: /images/projects/pollination/pollination.png
@@ -22,11 +22,11 @@ tags:
   - Machine Learning
 ---
 
-This thesis project explores pollination networks as a model for digital communication across distributed systems — specifically for Delay Tolerant Networks (DTN) where no end-to-end transmission path exists between nodes.
+This thesis project explores pollination networks as a model for digital communication across distributed systems - specifically for Delay Tolerant Networks (DTN) where no end-to-end transmission path exists between nodes.
 
 ## Concept
 
-When a pollinator comes in contact with a plant, it collects or dissipates pollen. In analogy to data, this is a viable model for digital communication across distributed networks. The proximity-based exchange model enables sensors to remain dormant until a pollination event occurs — reducing hardware and power requirements while enabling finer-grained data collection.
+When a pollinator comes in contact with a plant, it collects or dissipates pollen. In analogy to data, this is a viable model for digital communication across distributed networks. The proximity-based exchange model enables sensors to remain dormant until a pollination event occurs - reducing hardware and power requirements while enabling finer-grained data collection.
 
 ## Implementation
 

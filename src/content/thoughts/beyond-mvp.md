@@ -7,7 +7,7 @@ tags:
   - Strategy
 ---
 
-The tech industry loves to talk about MVPs — Minimum Viable Products. But in our rush to ship quickly, we've quietly redefined "viable" to mean "shippable," and forgotten the part that matters most: does it actually solve the problem?
+The tech industry loves to talk about MVPs - Minimum Viable Products. But in our rush to ship quickly, we've quietly redefined "viable" to mean "shippable," and forgotten the part that matters most: does it actually solve the problem?
 
 ## The Minimum Viable Bar
 
@@ -19,7 +19,7 @@ The pressure to move fast creates systematic blind spots:
 
 - **Onboarding**: The first 10 minutes determine whether someone becomes a user or a churn statistic. Most MVPs treat it as an afterthought.
 - **Error states**: What happens when the happy path breaks? Often nothing useful.
-- **Performance**: Slow products signal low quality and drive abandonment — even if the core feature is solid.
+- **Performance**: Slow products signal low quality and drive abandonment - even if the core feature is solid.
 
 ## The Reframe I Find Useful
 

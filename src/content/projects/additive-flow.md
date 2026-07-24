@@ -22,7 +22,7 @@ Additive Flow is a software platform that enables engineers to design and optimi
 
 ## The Problem
 
-Traditional CAD tools weren't built for the complexity of additive manufacturing — specifically the ability to vary material properties across a single part. Engineers were leaving enormous performance gains on the table.
+Traditional CAD tools weren't built for the complexity of additive manufacturing - specifically the ability to vary material properties across a single part. Engineers were leaving enormous performance gains on the table.
 
 ## What We Built
 

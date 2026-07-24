@@ -1,6 +1,6 @@
 ---
 title: Robotic Fabrication
-description: A shading mashrabiya designed for a window bay — parametrically designed and robotically manufactured using a KUKA arm.
+description: A shading mashrabiya designed for a window bay - parametrically designed and robotically manufactured using a KUKA arm.
 role: Designer & Fabricator
 year: "2017"
 location: London, UK
@@ -25,7 +25,7 @@ tags:
   - Prototype
 ---
 
-A bespoke shading mashrabiya — a traditional Arabic lattice screen — designed algorithmically and constructed by a robotic arm placing ceramic elements one by one.
+A bespoke shading mashrabiya - a traditional Arabic lattice screen - designed algorithmically and constructed by a robotic arm placing ceramic elements one by one.
 
 ## Concept
 
@@ -33,6 +33,6 @@ The form responds to solar angles and desired shading patterns, generating a non
 
 ## Fabrication
 
-A KUKA robotic arm was programmed using a custom Grasshopper-to-robot pipeline to place each element with millimetre precision — a process impractical by hand at this level of geometric variation.
+A KUKA robotic arm was programmed using a custom Grasshopper-to-robot pipeline to place each element with millimetre precision - a process impractical by hand at this level of geometric variation.
 
 Tutors: Khaled ElAshry and Vincent Huyghe.

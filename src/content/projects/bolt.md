@@ -1,7 +1,7 @@
 ---
 title: Bolt
 description: Leading the City Solutions domain for Bolt's micromobility business - reducing regulatory risk, winning city tenders, and building AI-powered tools to make shared scooters work better for cities.
-role: Senior Product Manager — City Solutions
+role: Senior Product Manager - City Solutions
 year: "2023 – 2024"
 location: London, UK
 website: https://bolt.eu/en-gb/cities/solutions/
@@ -22,7 +22,7 @@ tags:
   - B2C
 ---
 
-Bolt is Europe's leading mobility super-app. As Senior PM for City Solutions (micromobility), I owned the domain strategy for making Bolt's scooter and e-bike operations work with cities — not just in them.
+Bolt is Europe's leading mobility super-app. As Senior PM for City Solutions (micromobility), I owned the domain strategy for making Bolt's scooter and e-bike operations work with cities - not just in them.
 
 ## The Challenge
 
@@ -30,13 +30,13 @@ Micromobility operators face a constant tension between growth and regulation. C
 
 ## What I Built
 
-**AI Parking Validation (Computer Vision)** — Improved parking quality by 18 percentage points by using [on-device CV](https://web.archive.org/web/20240912134242/https://bolt.eu/en/blog/ensuring-correct-scooter-parking-with-parkassist/) to validate whether a scooter was properly parked before ending a ride.
+**AI Parking Validation (Computer Vision)** - Improved parking quality by 18 percentage points by using [on-device CV](https://web.archive.org/web/20240912134242/https://bolt.eu/en/blog/ensuring-correct-scooter-parking-with-parkassist/) to validate whether a scooter was properly parked before ending a ride.
 
-**Predictive Maintenance (Sensor Fusion)** — Cut annual servicing costs by 5% by building a model that [identifies vehicles likely to fail](https://bolt.eu/en/blog/bolt-amis-keeping-road-users-safe/) before they do, using accelerometer and gyroscope data from the scooter fleet.
+**Predictive Maintenance (Sensor Fusion)** - Cut annual servicing costs by 5% by building a model that [identifies vehicles likely to fail](https://bolt.eu/en/blog/bolt-amis-keeping-road-users-safe/) before they do, using accelerometer and gyroscope data from the scooter fleet.
 
-**Geospatial Data Insights SaaS** — Led a 0→1 [data product](https://city.bolt.eu/) giving city authorities visibility into fleet behaviour, parking patterns, and compliance. A long-term relationship tool as much as a compliance tool.
+**Geospatial Data Insights SaaS** - Led a 0→1 [data product](https://city.bolt.eu/) giving city authorities visibility into fleet behaviour, parking patterns, and compliance. A long-term relationship tool as much as a compliance tool.
 
-**Front-facing Camera Programme** — Initiated a strategic investment in front-facing cameras across the fleet, collaborating with data scientists, hardware, and mechanical engineering teams.
+**Front-facing Camera Programme** - Initiated a strategic investment in front-facing cameras across the fleet, collaborating with data scientists, hardware, and mechanical engineering teams.
 
 ## Impact
 
