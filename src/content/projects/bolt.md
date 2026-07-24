@@ -11,7 +11,7 @@ gallery:
   - /images/projects/bolt/dashboard-insights.png
   - /images/projects/bolt/rider.png
   - /images/projects/bolt/parking-compliance.png
-featured: true
+featured: false
 order: 4
 icon: fa-solid fa-bolt
 tags:

@@ -8,7 +8,7 @@ website: https://www.additiveflow.com
 heroImage: /images/projects/additive-flow/hero.png
 gallery:
   - /images/projects/additive-flow/hero.png
-featured: false
+featured: true
 order: 1
 icon: fa-solid fa-layer-group
 tags:
