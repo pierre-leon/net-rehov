@@ -173,6 +173,16 @@ const metaItems = [
   </section>
 </BaseLayout>
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://www.rehov.net/" },
+    { "@type": "ListItem", "position": 2, "name": "Work",    "item": "https://www.rehov.net/projects" },
+    { "@type": "ListItem", "position": 3, "name": d.title,   "item": `https://www.rehov.net/projects/${project.id}` }
+  ]
+})} />
+
 <style is:global>
   .prose h2 {
     font-size: 1.5rem;

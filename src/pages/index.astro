@@ -17,10 +17,11 @@ const recentThoughts = (await getCollection("thoughts"))
 ---
 
 <BaseLayout
-  title="Home"
-  description="Ishay Rosenthal — Product Leader working at the intersection of AI, data, and design."
+  title="Ishay Rosenthal — Product Leader in AI, Data & Machine Learning"
+  description="Senior Product Leader specialising in AI, machine learning and data products. Based in London."
   transparentNav={true}
   preloadImage="/images/hero-image.png"
+  appendName={false}
 >
   <!-- Hero -->
   <section class="relative min-h-[70vh] flex items-end overflow-hidden">
@@ -130,20 +131,28 @@ const recentThoughts = (await getCollection("thoughts"))
           See my work <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        {
-          [
-            { icon: "fa-solid fa-brain", label: "AI/ML Products" },
-            { icon: "fa-solid fa-layer-group", label: "0→1 Building" },
-            { icon: "fa-solid fa-lightbulb", label: "Design Thinking" },
-            { icon: "fa-solid fa-chart-line", label: "Growth & Scale" },
-          ].map((item) => (
-            <div class="bg-white rounded-lg p-5 border border-gray-100">
-              <i class={`${item.icon} text-teal text-xl mb-3 block`} />
-              <p class="text-sm font-medium text-gray-700">{item.label}</p>
-            </div>
-          ))
-        }
+      <div class="flex flex-col gap-6">
+        <img
+          src="/images/ishay-rosenthal.jpg"
+          alt="Ishay Rosenthal"
+          class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md"
+          loading="lazy"
+        />
+        <div class="grid grid-cols-2 gap-4">
+          {
+            [
+              { icon: "fa-solid fa-brain", label: "AI/ML Products" },
+              { icon: "fa-solid fa-layer-group", label: "0→1 Building" },
+              { icon: "fa-solid fa-lightbulb", label: "Design Thinking" },
+              { icon: "fa-solid fa-chart-line", label: "Growth & Scale" },
+            ].map((item) => (
+              <div class="bg-white rounded-lg p-5 border border-gray-100">
+                <i class={`${item.icon} text-teal text-xl mb-3 block`} />
+                <p class="text-sm font-medium text-gray-700">{item.label}</p>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
@@ -285,6 +294,26 @@ const recentThoughts = (await getCollection("thoughts"))
     </div>
   </section>
 </BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.rehov.net/#person",
+  "name": "Ishay Rosenthal",
+  "url": "https://www.rehov.net/",
+  "jobTitle": "Senior Product Leader",
+  "description": "Senior Product Leader specialising in AI, machine learning and data products.",
+  "image": "https://www.rehov.net/images/ishay-rosenthal.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/ishay/",
+    "https://twitter.com/pierre_leon",
+    "https://github.com/pierre-leon",
+    "https://www.crunchbase.com/person/ishay-rosenthal",
+    "https://www.quietedge.io/ishay-rosenthal"
+  ]
+}
+</script>
 
 <script>
   const form = document.getElementById("contact-form") as HTMLFormElement | null;
