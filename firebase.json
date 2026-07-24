@@ -16,7 +16,8 @@
       { "source": "/hadar.html",       "destination": "/projects/hadar",          "type": 301 },
       { "source": "/netanya.html",     "destination": "/projects/netanya",        "type": 301 },
       { "source": "/tlvpark.html",     "destination": "/projects/tlvpark",        "type": 301 },
-      { "source": "/residential.html", "destination": "/projects/alon",           "type": 301 }
+      { "source": "/residential.html", "destination": "/projects/alon",           "type": 301 },
+      { "source": "/sitemap.xml",      "destination": "/sitemap-index.xml",       "type": 301 }
     ],
     "rewrites": [
       {
