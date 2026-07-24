@@ -9,7 +9,7 @@ heroImage: /images/projects/sownd/certified.png
 gallery:
   - /images/projects/sownd/certified.png
 featured: false
-order: 6
+order: 7
 icon: fa-solid fa-ear-listen
 tags:
   - Product

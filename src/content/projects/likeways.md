@@ -9,7 +9,7 @@ heroImage: /images/projects/likeways/hero.png
 gallery:
   - /images/projects/likeways/hero.png
 featured: false
-order: 8
+order: 2
 icon: fa-solid fa-route
 tags:
   - Product

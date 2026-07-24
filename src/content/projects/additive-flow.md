@@ -9,7 +9,7 @@ heroImage: /images/projects/additive-flow/hero.png
 gallery:
   - /images/projects/additive-flow/hero.png
 featured: false
-order: 7
+order: 1
 icon: fa-solid fa-layer-group
 tags:
   - Product Leadership

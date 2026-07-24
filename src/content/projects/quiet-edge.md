@@ -9,7 +9,7 @@ website: https://www.quietedge.io/ishay-rosenthal
 gallery:
   - /images/projects/quiet-edge/brand.webp
 featured: true
-order: 3
+order: 5
 icon: fa-solid fa-compass
 tags:
   - Product Advisory

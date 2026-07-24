@@ -14,7 +14,7 @@ gallery:
   - /images/projects/hayden-ai/cameras.png
   - /images/projects/hayden-ai/heatmap.png
 featured: true
-order: 1
+order: 3
 icon: fa-solid fa-bus
 tags:
   - Computer Vision

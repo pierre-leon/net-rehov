@@ -12,7 +12,7 @@ gallery:
   - /images/projects/bolt/rider.png
   - /images/projects/bolt/parking-compliance.png
 featured: true
-order: 2
+order: 4
 icon: fa-solid fa-bolt
 tags:
   - Micromobility
