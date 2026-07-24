@@ -8,8 +8,8 @@ website: https://www.additiveflow.com
 heroImage: /images/projects/additive-flow/hero.png
 gallery:
   - /images/projects/additive-flow/hero.png
-featured: false
-order: 7
+featured: true
+order: 1
 icon: fa-solid fa-layer-group
 tags:
   - Product Leadership
@@ -22,7 +22,7 @@ Additive Flow is a software platform that enables engineers to design and optimi
 
 ## The Problem
 
-Traditional CAD tools weren't built for the complexity of additive manufacturing — specifically the ability to vary material properties across a single part. Engineers were leaving enormous performance gains on the table.
+Traditional CAD tools weren't built for the complexity of additive manufacturing - specifically the ability to vary material properties across a single part. Engineers were leaving enormous performance gains on the table.
 
 ## What We Built
 

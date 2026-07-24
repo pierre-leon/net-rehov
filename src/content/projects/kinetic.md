@@ -26,7 +26,7 @@ A kinetic light installation that merges the erratic movement of compound pendul
 
 ## Concept
 
-The compound pendulum — a physical system known for its chaotic, unpredictable motion — is here brought under partial control through precision motor actuation. The result is a system that sits between chaos and order: responsive but not fully predictable, controlled but not mechanical.
+The compound pendulum - a physical system known for its chaotic, unpredictable motion - is here brought under partial control through precision motor actuation. The result is a system that sits between chaos and order: responsive but not fully predictable, controlled but not mechanical.
 
 ## Technical
 

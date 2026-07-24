@@ -1,6 +1,6 @@
 ---
 title: Netanya 2035 Masterplan
-description: A city masterplan vision for Netanya 2035 — research, analysis, and detailed design alternatives developed with a multidisciplinary consultant team.
+description: A city masterplan vision for Netanya 2035 - research, analysis, and detailed design alternatives developed with a multidisciplinary consultant team.
 role: Designer @ Yaar Architects
 year: "2010–2012"
 location: Netanya, Israel

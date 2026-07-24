@@ -9,7 +9,7 @@ heroImage: /images/projects/likeways/hero.png
 gallery:
   - /images/projects/likeways/hero.png
 featured: false
-order: 8
+order: 2
 icon: fa-solid fa-route
 tags:
   - Product
@@ -18,11 +18,11 @@ tags:
   - 0→1
 ---
 
-Likeways was a mobile navigation app that offered an alternative to fastest-route navigation — one that celebrated walkability and helped people discover what makes their city interesting.
+Likeways was a mobile navigation app that offered an alternative to fastest-route navigation - one that celebrated walkability and helped people discover what makes their city interesting.
 
 ## The Idea
 
-Most navigation apps optimise for speed. Likeways optimised for experience — routing you past interesting streets, green spaces, and local landmarks rather than along the fastest arterial road. It rewarded exploration over efficiency.
+Most navigation apps optimise for speed. Likeways optimised for experience - routing you past interesting streets, green spaces, and local landmarks rather than along the fastest arterial road. It rewarded exploration over efficiency.
 
 ## My Role
 

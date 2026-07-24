@@ -73,6 +73,26 @@ const formatted = d.date.toLocaleDateString("en-GB", {
   </article>
 </BaseLayout>
 
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": d.title,
+  "description": d.excerpt,
+  "datePublished": d.date.toISOString(),
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.rehov.net/#person",
+    "name": "Ishay Rosenthal"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ishay Rosenthal",
+    "url": "https://www.rehov.net/"
+  },
+  "url": `https://www.rehov.net/thoughts/${post.id}`,
+  "image": d.heroImage ? `https://www.rehov.net${d.heroImage}` : "https://www.rehov.net/images/ishay-rosenthal.jpg"
+})} />
+
 <style is:global>
   .prose-content h2 {
     font-size: 1.5rem;
