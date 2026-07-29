@@ -9,13 +9,19 @@ heroImage: /images/projects/likeways/hero.png
 gallery:
   - /images/projects/likeways/hero.png
 featured: false
-order: 2
+order: 3
 icon: fa-solid fa-route
 tags:
-  - Product
-  - Mobile
-  - Social
-  - 0→1
+  - label: 0→1
+    type: projectType
+    priority: 1
+  - label: Mobile
+    type: technology
+    priority: 2
+  - label: Social
+    type: domain
+  - label: B2C
+    type: customer
 ---
 
 Likeways was a mobile navigation app that offered an alternative to fastest-route navigation - one that celebrated walkability and helped people discover what makes their city interesting.

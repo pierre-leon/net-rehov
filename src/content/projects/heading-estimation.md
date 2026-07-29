@@ -12,10 +12,14 @@ category: experiments
 order: 8
 icon: fa-solid fa-compass
 tags:
-  - Machine Learning
-  - Computer Vision
-  - Research
-  - Sensors
+  - label: Machine Learning
+    type: technology
+    priority: 1
+  - label: Computer Vision
+    type: technology
+    priority: 2
+  - label: Research
+    type: projectType
 ---
 
 A machine learning approach to pedestrian heading estimation - inferring the direction a person is walking from sensor data, without requiring GPS line-of-sight or explicit user input.

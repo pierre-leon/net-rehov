@@ -12,14 +12,21 @@ gallery:
   - /images/projects/bolt/rider.png
   - /images/projects/bolt/parking-compliance.png
 featured: false
-order: 4
+order: 6
 icon: fa-solid fa-bolt
 tags:
-  - Micromobility
-  - Computer Vision
-  - AI/ML
-  - B2G
-  - B2C
+  - label: Micromobility
+    type: domain
+    priority: 1
+  - label: Computer Vision
+    type: technology
+    priority: 2
+  - label: AI/ML
+    type: technology
+  - label: B2G
+    type: customer
+  - label: B2C
+    type: customer
 ---
 
 Bolt is Europe's leading mobility super-app. As Senior PM for City Solutions (micromobility), I owned the domain strategy for making Bolt's scooter and e-bike operations work with cities - not just in them.

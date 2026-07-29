@@ -9,13 +9,20 @@ website: https://www.quietedge.io/ishay-rosenthal
 gallery:
   - /images/projects/quiet-edge/brand.webp
 featured: true
-order: 5
+order: 1
 icon: fa-solid fa-compass
 tags:
-  - Product Advisory
-  - AI/ML
-  - 0→1
-  - B2B
+  - label: AI/ML
+    type: domain
+    priority: 1
+  - label: 0→1
+    type: projectType
+    priority: 2
+  - label: Advisory
+    type: projectType
+    priority: 3
+  - label: B2B
+    type: customer
 ---
 
 The Quiet Edge provides fractional product leadership to early-stage founders building AI products - helping them think clearly about strategy and go-to-market before they've scaled a team.
@@ -26,7 +33,6 @@ I work with founders at pre-seed and seed stage who need product thinking but ar
 
 ## Recent Engagements
 
-- **Additive Flow** (a Nano Dimension division) - continued advisory following the acquisition, supporting the product evolution into the enterprise AM market
 - **Health-tech scale-up** - building a medical support chatbot; worked on conversation design, safety guardrails, and clinical validation strategy
 - **Pre-seed AI startup** - building a disruption prediction platform; shaped the product thesis and data strategy from inception
 - **Seed-stage startup** - building a geospatial copilot; contributed to technical approach and early user research

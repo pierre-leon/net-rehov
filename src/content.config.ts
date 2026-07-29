@@ -18,7 +18,11 @@ const projects = defineCollection({
     featured: z.boolean().default(false),
     order: z.number().default(99),
     icon: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    tags: z.array(z.object({
+      label: z.string(),
+      type: z.enum(["technology", "domain", "customer", "projectType"]),
+      priority: z.number().optional(),
+    })).optional(),
     category: z.enum(["ventures", "experiments", "architecture"]).default("ventures"),
     client: z.string().optional(),
   }),

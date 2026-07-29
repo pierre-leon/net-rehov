@@ -14,9 +14,11 @@ order: 13
 category: architecture
 icon: fa-solid fa-archway
 tags:
-  - Urban Design
-  - Mixed Use
-  - Tel Aviv
+  - label: Urban Design
+    type: domain
+    priority: 1
+  - label: Mixed Use
+    type: domain
 ---
 
 Currently a two-storey car park, this complex site is carved by major arterial roads and sits directly above a new underground station - making it a natural gateway to the city.

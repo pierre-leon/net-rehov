@@ -14,9 +14,11 @@ order: 12
 category: architecture
 icon: fa-solid fa-map
 tags:
-  - Urban Design
-  - Masterplan
-  - Israel
+  - label: Urban Design
+    type: domain
+    priority: 1
+  - label: Masterplan
+    type: projectType
 ---
 
 A strategic masterplan vision for the city of Netanya to 2035. Working with a multidisciplinary team of consultants, the project involved deep urban, social, and economic research, the generation of design concepts, and development into detailed design alternatives.

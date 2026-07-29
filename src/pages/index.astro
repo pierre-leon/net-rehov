@@ -6,10 +6,10 @@ import { getCollection } from "astro:content";
 import { SHOW_THOUGHTS } from "../config";
 
 const allProjects = await getCollection("projects");
-const featured = allProjects
-  .filter((p) => p.data.featured && p.data.category === "ventures")
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 3);
+const featuredSlugs = ["hayden-ai", "additive-flow", "bolt"];
+const featured = featuredSlugs
+  .map((slug) => allProjects.find((p) => p.id === slug))
+  .filter(Boolean) as typeof allProjects;
 
 const recentThoughts = (await getCollection("thoughts"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -123,13 +123,13 @@ const recentThoughts = (await getCollection("thoughts"))
           Background spanning Architecture, Computational Design, and Mechanics, shaping an approach to systems, constraints, and craft.
         </p>
         <p class="text-gray-600 leading-relaxed mb-8">
-          Ishay Rosenthal is the co-founder of Additive Flow and Likeways, and advises early-stage founders on AI strategy, product direction, and execution.
+          Ishay Rosenthal is the co-founder of <a href="/projects/additive-flow" class="text-teal hover:text-teal-dark underline transition-colors">Additive Flow</a> and <a href="/projects/likeways" class="text-teal hover:text-teal-dark underline transition-colors">Likeways</a>, and advises early-stage founders on AI strategy, product direction, and execution through <a href="/projects/quiet-edge" class="text-teal hover:text-teal-dark underline transition-colors">The Quiet Edge</a>.
         </p>
         <a
-          href="/projects"
+          href="#contact"
           class="inline-flex items-center gap-2 text-sm font-semibold text-teal hover:text-teal-dark transition-colors"
         >
-          See my work <i class="fa-solid fa-arrow-right text-xs"></i>
+          Get in touch <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
       <div class="flex flex-col gap-6">

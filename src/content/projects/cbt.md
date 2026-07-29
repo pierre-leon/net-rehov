@@ -14,9 +14,11 @@ order: 11
 category: architecture
 icon: fa-solid fa-city
 tags:
-  - Urban Design
-  - Regeneration
-  - Tel Aviv
+  - label: Urban Design
+    type: domain
+    priority: 1
+  - label: Regeneration
+    type: domain
 ---
 
 Urban renewal masterplan for the decommissioned Tel Aviv Central Bus Terminal - one of the city's most complex and contested sites. The scheme proposes a dense mixed-use district adding 1,000 residential units, 170,000 sqm of office and retail, and a new Dance Performance Centre.

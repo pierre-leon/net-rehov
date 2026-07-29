@@ -16,10 +16,17 @@ category: experiments
 order: 5
 icon: fa-solid fa-network-wired
 tags:
-  - Distributed Systems
-  - Algorithms
-  - Research
-  - Machine Learning
+  - label: Distributed Systems
+    type: technology
+    priority: 1
+  - label: Algorithms
+    type: technology
+    priority: 2
+  - label: Machine Learning
+    type: technology
+    priority: 3
+  - label: Research
+    type: projectType
 ---
 
 This thesis project explores pollination networks as a model for digital communication across distributed systems - specifically for Delay Tolerant Networks (DTN) where no end-to-end transmission path exists between nodes.

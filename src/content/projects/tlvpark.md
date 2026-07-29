@@ -15,9 +15,11 @@ order: 14
 category: architecture
 icon: fa-solid fa-tree-city
 tags:
-  - Architecture
-  - Public Space
-  - Tel Aviv
+  - label: Architecture
+    type: projectType
+  - label: Public Space
+    type: domain
+    priority: 1
 ---
 
 TLVpark reclaims the site of Tel Aviv's first public park - now occupied by a multi-storey car park - by cutting into and building within the existing parking structure rather than demolishing it.

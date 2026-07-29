@@ -16,10 +16,14 @@ category: experiments
 order: 6
 icon: fa-solid fa-bezier-curve
 tags:
-  - Computational Design
-  - Morphogenesis
-  - Parametric
-  - Tools
+  - label: Computational Design
+    type: domain
+    priority: 1
+  - label: Parametric
+    type: technology
+    priority: 2
+  - label: Morphogenesis
+    type: domain
 ---
 
 A set of computational design tools for generating parametric morphologies - exploring the formal language of tensile structures, catenary curves, and NURBS surface generation.

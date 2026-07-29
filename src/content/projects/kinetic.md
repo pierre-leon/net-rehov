@@ -16,10 +16,17 @@ category: experiments
 order: 7
 icon: fa-solid fa-circle-notch
 tags:
-  - Kinetic Installation
-  - Physical Computing
-  - Arduino
-  - Prototype
+  - label: Kinetic Installation
+    type: domain
+    priority: 1
+  - label: Physical Computing
+    type: technology
+    priority: 2
+  - label: Arduino
+    type: technology
+    priority: 3
+  - label: Prototype
+    type: projectType
 ---
 
 A kinetic light installation that merges the erratic movement of compound pendulums with the high-fidelity control of stepper motors. The system reacts to user movements, translating them into virtual light drawings.

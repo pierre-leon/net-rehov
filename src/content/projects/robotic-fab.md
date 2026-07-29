@@ -19,10 +19,16 @@ order: 22
 category: experiments
 icon: fa-solid fa-robot
 tags:
-  - Computational Design
-  - Robotic Fabrication
-  - Architecture
-  - Prototype
+  - label: Computational Design
+    type: domain
+    priority: 1
+  - label: Robotic Fabrication
+    type: technology
+    priority: 2
+  - label: Architecture
+    type: domain
+  - label: Prototype
+    type: projectType
 ---
 
 A bespoke shading mashrabiya - a traditional Arabic lattice screen - designed algorithmically and constructed by a robotic arm placing ceramic elements one by one.

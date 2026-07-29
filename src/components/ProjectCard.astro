@@ -1,15 +1,27 @@
 ---
+interface Tag {
+  label: string;
+  type: string;
+  priority?: number;
+}
+
 interface Props {
   slug: string;
   title: string;
   description: string;
   role?: string;
   heroImage: string;
-  tags?: string[];
+  tags?: Tag[];
   icon?: string;
 }
 
 const { slug, title, description, role, heroImage, tags, icon } = Astro.props;
+
+const cardTags = tags
+  ? tags
+      .filter((t) => (t.priority !== undefined && t.priority < 4) || t.type === "customer")
+      .sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999))
+  : [];
 ---
 
 <a
@@ -44,11 +56,11 @@ const { slug, title, description, role, heroImage, tags, icon } = Astro.props;
       {description}
     </p>
     {
-      tags && tags.length > 0 && (
+      cardTags.length > 0 && (
         <div class="flex flex-wrap gap-2 mt-4">
-          {tags.map((tag) => (
+          {cardTags.map((tag) => (
             <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 text-gray-600">
-              {tag}
+              {tag.label}
             </span>
           ))}
         </div>

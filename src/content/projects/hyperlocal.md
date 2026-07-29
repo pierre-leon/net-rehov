@@ -18,10 +18,17 @@ order: 4
 category: experiments
 icon: fa-solid fa-map-location-dot
 tags:
-  - Urban Tech
-  - iOS
-  - Data Visualisation
-  - Prototype
+  - label: Urban Tech
+    type: domain
+    priority: 1
+  - label: iOS
+    type: technology
+    priority: 2
+  - label: Data Visualisation
+    type: technology
+    priority: 3
+  - label: Prototype
+    type: projectType
 ---
 
 Urban neighbourhoods are the building blocks of the city - but they are complex to define and incorporate. How do we know where one neighbourhood starts and another begins?

@@ -18,9 +18,11 @@ order: 10
 category: architecture
 icon: fa-solid fa-building
 tags:
-  - Architecture
-  - Residential
-  - Tel Aviv
+  - label: Architecture
+    type: projectType
+  - label: Residential
+    type: domain
+    priority: 1
 ---
 
 Residential tower in Tel Aviv, developed for Mivne Group. I led the project as the Lead Architect at Kaiser Architects, taking the design from initial concept through iterative development to an approved planning application and construction documents.

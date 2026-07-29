@@ -14,13 +14,20 @@ gallery:
   - /images/projects/hayden-ai/cameras.png
   - /images/projects/hayden-ai/heatmap.png
 featured: true
-order: 3
+order: 4
 icon: fa-solid fa-bus
 tags:
-  - Computer Vision
-  - AI/ML
-  - Public Transit
-  - B2G
+  - label: Computer Vision
+    type: technology
+    priority: 1
+  - label: AI/ML
+    type: technology
+    priority: 2
+  - label: Public Transport
+    type: domain
+    priority: 3
+  - label: B2G
+    type: customer
 ---
 
 Hayden AI combines advanced vision AI with purpose-built, vehicle-mounted hardware to analyse urban environments in real time. Bus-mounted cameras detect parking violations, bus lane infractions, and double-parking - the everyday disruptions that make public transit unreliable.

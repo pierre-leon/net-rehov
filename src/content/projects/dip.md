@@ -17,10 +17,16 @@ category: experiments
 order: 7
 icon: fa-solid fa-water
 tags:
-  - HCI
-  - Interaction Design
-  - Physical Computing
-  - Prototype
+  - label: HCI
+    type: domain
+    priority: 1
+  - label: Physical Computing
+    type: technology
+    priority: 2
+  - label: Interaction Design
+    type: domain
+  - label: Prototype
+    type: projectType
 ---
 
 DIP is a prototype immersive interface that uses light and water as its medium. A multi-sensory environment that utilises the physical properties of water - its mass, temperature, buoyancy, and the kinaesthetic enclosure of fluid around the body - to immerse the user both physically and cognitively in an interactive 3D space.

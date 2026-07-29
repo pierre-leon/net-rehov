@@ -9,13 +9,24 @@ heroImage: /images/projects/additive-flow/hero.png
 gallery:
   - /images/projects/additive-flow/hero.png
 featured: true
-order: 1
+order: 5
 icon: fa-solid fa-layer-group
 tags:
-  - Product Leadership
-  - Deep Tech
-  - 0→1
-  - B2B SaaS
+  - label: 0→1
+    type: projectType
+    priority: 1
+  - label: Deep Tech
+    type: domain
+    priority: 2
+  - label: SaaS
+    type: domain
+    priority: 3
+  - label: Additive Manufacturing
+    type: domain
+  - label: B2B
+    type: customer
+  - label: SaaS
+    type: domain
 ---
 
 Additive Flow is a software platform that enables engineers to design and optimise multi-material parts for additive manufacturing. As co-founder and Head of Product, I led product strategy from inception through Series A.

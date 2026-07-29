@@ -12,10 +12,14 @@ featured: false
 order: 7
 icon: fa-solid fa-ear-listen
 tags:
-  - Product
-  - Built Environment
-  - 0→1
-  - B2B
+  - label: Built Environment
+    type: domain
+    priority: 1
+  - label: 0→1
+    type: projectType
+    priority: 2
+  - label: B2B
+    type: customer
 ---
 
 Sownd is on a mission to transform how people experience sound in social spaces - turning noise into harmony through real-time acoustic monitoring and certification.

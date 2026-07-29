@@ -17,6 +17,31 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 const d = project.data;
 
+const typeConfig: Record<string, { icon: string; label: string }> = {
+  technology:  { icon: "fa-microchip",   label: "Technology" },
+  domain:      { icon: "fa-layer-group", label: "Domain" },
+  customer:    { icon: "fa-users",       label: "Customer" },
+  projectType: { icon: "fa-flask",       label: "Project Type" },
+};
+const typeOrder = ["technology", "domain", "customer", "projectType"];
+
+type Tag = { label: string; type: string; priority?: number };
+const tagsByType: Record<string, Tag[]> = {};
+if (d.tags) {
+  for (const tag of d.tags) {
+    if (!tagsByType[tag.type]) tagsByType[tag.type] = [];
+    tagsByType[tag.type].push(tag);
+  }
+  for (const group of Object.values(tagsByType)) {
+    group.sort((a, b) => {
+      if (a.priority !== undefined && b.priority !== undefined) return a.priority - b.priority;
+      if (a.priority !== undefined) return -1;
+      if (b.priority !== undefined) return 1;
+      return a.label.localeCompare(b.label);
+    });
+  }
+}
+
 const metaItems = [
   d.role && { icon: "fa-solid fa-user-tie", label: "Role", value: d.role },
   d.year && { icon: "fa-solid fa-calendar", label: "Year", value: d.year },
@@ -132,16 +157,25 @@ const metaItems = [
           }
 
           {
-            d.tags && d.tags.length > 0 && (
-              <div class="mt-6 pt-6 border-t border-gray-200">
-                <p class="text-xs text-gray-400 font-medium uppercase tracking-wide mb-3">Tags</p>
-                <div class="flex flex-wrap gap-2">
-                  {d.tags.map((tag) => (
-                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-teal/10 text-teal-dark">
-                      {tag}
-                    </span>
+            typeOrder.some((t) => tagsByType[t]?.length > 0) && (
+              <div class="mt-6 pt-6 border-t border-gray-200 space-y-4">
+                {typeOrder
+                  .filter((type) => tagsByType[type]?.length > 0)
+                  .map((type) => (
+                    <div>
+                      <p class="flex items-center gap-1.5 text-xs text-gray-400 font-medium uppercase tracking-wide mb-2">
+                        <i class={`fa-solid ${typeConfig[type].icon} text-teal w-4 shrink-0`} />
+                        {typeConfig[type].label}
+                      </p>
+                      <div class="flex flex-wrap gap-1.5">
+                        {tagsByType[type].map((tag) => (
+                          <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-teal/10 text-teal-dark">
+                            {tag.label}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   ))}
-                </div>
               </div>
             )
           }

@@ -13,10 +13,16 @@ order: 3
 category: experiments
 icon: fa-solid fa-bolt-lightning
 tags:
-  - Energy
-  - Personal Project
-  - API
-  - Built with Lovable
+  - label: Energy
+    type: domain
+    priority: 1
+  - label: API
+    type: technology
+    priority: 2
+  - label: Personal Project
+    type: projectType
+  - label: Built with Lovable
+    type: technology
 ---
 
 I discovered Octopus Energy's Agile tariff and became fascinated with real-time energy pricing - half-hourly rates that follow wholesale electricity prices, sometimes going negative. I started manually comparing tariffs to understand whether I was on the right one. Then I built an app to do it properly.
